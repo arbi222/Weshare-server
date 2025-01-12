@@ -67,9 +67,10 @@ router.post("/refreshToken", async (req,res)=> {
             const newRefreshToken = generateRefreshToken(user)
 
             res.cookie("refreshToken", newRefreshToken, {
-                // httpOnly: true,
-                // secure: true,
-                sameSite: "strict"
+                httpOnly: false,
+                secure: false,
+                sameSite: "strict",
+                path: "/"
             })
     
             res.status(200).json({accessToken: newAccessToken});
@@ -96,9 +97,10 @@ router.post("/login", async (req,res) => {
                 const refreshToken = generateRefreshToken(user);
 
                 res.cookie("refreshToken", refreshToken, {
-                    // httpOnly: true,
-                    // secure: false,
-                    sameSite: "strict"
+                    httpOnly: false,
+                    secure: false,
+                    sameSite: "strict",
+                    path: "/"
                 })
 
                 const {updatedAt, ...userInfo} = user._doc;
