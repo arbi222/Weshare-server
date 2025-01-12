@@ -8,6 +8,7 @@ const morgan = require("morgan")
 const passport = require("passport")
 const session = require("express-session");
 const path = require("path");
+const cors = require("cors");
 
 dotenv.config()
 
@@ -25,9 +26,15 @@ const chatsRoute = require("./routes/chats")
 
 mongoose.connect(process.env.MONGO_URL);
 
+const corsOptions = {
+  origin: ["http://localhost:3000"],
+  credentials: true,
+};
+
 // middleware
 app.use(express.json())
 app.use(cookieParser())
+app.use(cors(corsOptions));
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"))
 
