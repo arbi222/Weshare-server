@@ -96,7 +96,7 @@ router.post("/login", async (req,res) => {
                 const refreshToken = generateRefreshToken(user);
 
                 res.cookie("refreshToken", refreshToken, {
-                    httpOnly: true,
+                    // httpOnly: true,
                     secure: true,
                     sameSite: "strict"
                 })
