@@ -67,9 +67,8 @@ router.post("/refreshToken", async (req,res)=> {
             const newRefreshToken = generateRefreshToken(user)
 
             res.cookie("refreshToken", newRefreshToken, {
-                
                 secure: process.env.NODE_ENV === "production",
-                sameSite: "strict",
+                sameSite: "None",
                 path: "/"
             })
     
@@ -97,9 +96,8 @@ router.post("/login", async (req,res) => {
                 const refreshToken = generateRefreshToken(user);
 
                 res.cookie("refreshToken", refreshToken, {
-                    
                     secure: process.env.NODE_ENV === "production",
-                    sameSite: "strict",
+                    sameSite: "None",
                     path: "/"
                 })
 
