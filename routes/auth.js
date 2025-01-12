@@ -124,8 +124,11 @@ router.get("/logout" , async (req,res) => {
             return err;
         }
         else{
-            res.clearCookie("refreshToken");
-            res.clearCookie("accessToken");
+            res.clearCookie("refreshToken", {
+                secure: process.env.NODE_ENV === "production",
+                sameSite: "None",
+                path: "/"
+            });
             res.status(200).json("user logged out");
         }
     })
