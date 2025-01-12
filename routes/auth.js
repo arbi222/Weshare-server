@@ -97,7 +97,7 @@ router.post("/login", async (req,res) => {
 
                 res.cookie("refreshToken", refreshToken, {
                     // httpOnly: true,
-                    secure: true,
+                    secure: false,
                     sameSite: "strict"
                 })
 
