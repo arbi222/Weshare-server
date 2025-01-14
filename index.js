@@ -27,7 +27,7 @@ const chatsRoute = require("./routes/chats")
 mongoose.connect(process.env.MONGO_URL);
 
 const corsOptions = {
-  origin: ["https://wesharemedia.onrender.com"],
+  origin: ["https://wesharemedia.onrender.com", "http://localhost:5173"],
   credentials: true,
 };
 
