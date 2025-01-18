@@ -60,6 +60,19 @@ app.use("/api/weather", weatherRoute)
 app.use("/api/conversations", conversationsRoute)
 app.use("/api/chats", chatsRoute)
 
+// Adding a cron job to keep my server alive because the host (Render) on free usage will make my server inactive 
+// if no request is being made in 10-15 minutes.
+const backendUrl = "https://weshare-server.onrender.com";
+const job = new cron.CronJob('*/8 * * * *', function(){
+  https.get(backendUrl, (res) => {
+    if (res.statusCode === 200){
+      console.log("server restarted")
+    }
+  }).on("error", (err) => {
+      console.log("error");
+  })
+})
+job.start();
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
