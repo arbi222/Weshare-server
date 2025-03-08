@@ -3,7 +3,7 @@ const User = require("../models/User")
 const nodeMailer = require("nodemailer");
 const crypto = require('crypto');
 
-
+// update the email sender below
 const transporter = nodeMailer.createTransport({
     service: "gmail",
     auth: {
