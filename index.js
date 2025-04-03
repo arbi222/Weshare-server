@@ -298,7 +298,7 @@ io.on("connection", (socket) => {
 // Adding a cron job to keep my server alive because the host (Render) on free usage will make my server inactive 
 // if no request is being made in 10-15 minutes.
 const backendUrl = "https://weshare-server.onrender.com";
-const job = new cron.CronJob('*/8 * * * *', function(){
+const job = new cron.CronJob('*/14 * * * *', function(){
   https.get(backendUrl, (res) => {
     if (res.statusCode === 200){
       console.log("server restarted")
