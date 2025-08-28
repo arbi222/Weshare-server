@@ -64,6 +64,9 @@ app.use("/api/weather", weatherRoute)
 app.use("/api/conversations", conversationsRoute)
 app.use("/api/chats", chatsRoute)
 
+app.get("/", (req,res) => {
+  res.send("Hello");
+})
 
 const server = http.createServer(app);
 
