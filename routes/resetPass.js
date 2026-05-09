@@ -24,6 +24,7 @@ router.post("/forgotPassword", async (req,res) => {
         const token = crypto.randomBytes(25).toString("hex");
         user.resetPasswordToken = token;
         user.resetPasswordExpires = Date.now() + 600000 // 10 min
+        await user.save();
     
         await mg.messages.create(process.env.MAILGUN_DOMAIN, {
             from: `"Weshare Support" <noreply@${process.env.MAILGUN_DOMAIN}>`,
