@@ -4,6 +4,7 @@
 
 🌐 **Social Media App:** [wesharemedia.onrender.com](https://wesharemedia.onrender.com)  
 💻 **Social Client Repo:** [Weshare-client](https://github.com/arbi222/Weshare-client)
+
 🌐 **Messenger App:** [wesharemessenger.onrender.com](https://wesharemessenger.onrender.com)
 💬 **Messenger Client Repo:** [Weshare-messenger](https://github.com/arbi222/Weshare-messenger)
 
@@ -61,18 +62,17 @@ WeShare is a system of two independent frontend applications — a social media 
 This single backend serves two completely independent frontend applications:
 
 ```
-                  ┌─────────────────────┐
-                  │   WeShare Server     │
-                  │  (REST API +         │
-                  │   Socket.io)         │
-                  └────────┬────────────┘
+              ┌─────────────────────────┐
+              │      WeShare Server     │
+              │ (REST API + Socket.io)  │
+              └────────────┬────────────┘
                            │
             ┌──────────────┴──────────────┐
             │                             │
-   ┌────────▼────────┐          ┌────────▼────────┐
-   │  Weshare-client │          │ Weshare-messenger│
-   │  (Social Media) │          │  (Messenger App) │
-   └─────────────────┘          └─────────────────┘
+   ┌────────▼────────┐          ┌────────▼──────────┐
+   │  Weshare-client │          │ Weshare-messenger │
+   │  (Social Media) │          │  (Messenger App)  │
+   └─────────────────┘          └───────────────────┘
 ```
 
 ---
