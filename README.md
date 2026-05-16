@@ -69,7 +69,7 @@ This single backend serves two completely independent frontend applications:
                            │
             ┌──────────────┴──────────────┐
             │                             │
-   ┌────────▼────────┐          ┌────────▼──────────┐
+   ┌────────▼────────┐          ┌─────────▼─────────┐
    │  Weshare-client │          │ Weshare-messenger │
    │  (Social Media) │          │  (Messenger App)  │
    └─────────────────┘          └───────────────────┘
